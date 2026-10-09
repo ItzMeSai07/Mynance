@@ -1,24 +1,41 @@
-//
-//  ContentView.swift
-//  Mynance
-//
-//  Created by Sai Navneedh Narayanan on 5/5/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+    @EnvironmentObject var account: Account
+    @State private var showingAddSheet = false
 
-#Preview {
-    ContentView()
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(account.transactions) { transaction in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(transaction.category)
+                                .font(.headline)
+                            Spacer()
+                            Text(String(format: "$%.2f", transaction.amount))
+                                .foregroundColor(transaction.amount < 0 ? .red : .green)
+                        }
+                        Text(transaction.description)
+                            .font(.subheadline)
+                        Text(transaction.date.formatted(date: .abbreviated, time: .omitted))
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+                    .padding(.vertical, 4)
+                }
+            }
+            .navigationTitle("Mynance")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: { showingAddSheet = true }) {
+                        Image(systemName: "plus")
+                    }
+                }
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                AddTransactionView()
+            }
+        }
+    }
 }

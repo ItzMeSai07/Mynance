@@ -35,16 +35,6 @@
 			path = Mynance;
 			sourceTree = "<group>";
 		};
-		B572D0D72DC8FEBA009AD6A0 /* MynanceTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MynanceTests;
-			sourceTree = "<group>";
-		};
-		B572D0E12DC8FEBA009AD6A0 /* MynanceUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MynanceUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				B572D0C62DC8FEB8009AD6A0 /* Mynance */,
-				B572D0D72DC8FEBA009AD6A0 /* MynanceTests */,
-				B572D0E12DC8FEBA009AD6A0 /* MynanceUITests */,
 				B572D0C52DC8FEB8009AD6A0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				B572D0D62DC8FEBA009AD6A0 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				B572D0D72DC8FEBA009AD6A0 /* MynanceTests */,
-			);
 			name = MynanceTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				B572D0E02DC8FEBA009AD6A0 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				B572D0E12DC8FEBA009AD6A0 /* MynanceUITests */,
 			);
 			name = MynanceUITests;
 			packageProductDependencies = (
